@@ -20,7 +20,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
       - name: checkout repo
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v3.5.3
       - name: show repo contents
         run: ls -al
       - name: deploy
