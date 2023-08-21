@@ -8,6 +8,61 @@
     <style>
         body {
             background-color: cyan;
+            text-align: center;
+        }
+
+        table {
+            width: 90%;
+            text-align: center;
+            position: absolute;
+            left: 5%;
+            z-index: 10;
+        }
+
+        tr {
+            margin: 0px;
+        }
+
+        .random-cell,
+        .mixed-cell {
+            margin: 0px;
+            width: 25%;
+        }
+
+        .neuro-cell {
+            margin: 0px;
+            width: 50%;
+            border-left: black 1px solid;
+            border-right: black 1px solid;
+        }
+
+        #nuzhdin-pic {
+            width: 150px;
+            height: 150px;
+            display: block;
+
+            position: absolute;
+            animation: moveX 4s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+        }
+
+        @keyframes moveX {
+            from {
+                left: 0;
+            }
+
+            to {
+                left: calc(100% - 150px);
+            }
+        }
+
+        @keyframes moveY {
+            from {
+                top: 0;
+            }
+
+            to {
+                top: calc(100% - 150px);
+            }
         }
     </style>
 </head>
@@ -16,21 +71,30 @@
     <table>
         <tbody>
             <tr>
-                <td>
+                <td class="random-cell">
                     <button id="btn-random">случайный нуждик</button>
+                </td>
+                <td class="neuro-cell">
+                    <button id="btn-neuro">нейронуждик</button>
+                </td>
+                <td class="mixed-cell">
+                    <button id="btn-mixed">нуждик с другим панчлайном</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="random-cell">
                     <p id="random-res"></p>
                 </td>
-                <td>
-                    <button id="btn-neuro">нейронуждик</button>
+                <td class="neuro-cell">
                     <p id="neuro-res"></p>
                 </td>
-                <td>
-                    <button id="btn-mixed">нуждик с другим панчлайном</button>
+                <td class="mixed-cell">
                     <p id="mixed-res"></p>
                 </td>
             </tr>
         </tbody>
     </table>
+<img id="nuzhdin-pic" src="assets/img/nuzhdin.webp">
 </body>
 
 <script type="text/javascript" src="script.js"></script>

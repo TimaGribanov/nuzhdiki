@@ -16,7 +16,7 @@ const request = (path) => {
   const alertContents = () => {
       if (httpRequest.readyState === XMLHttpRequest.DONE) {
           if (httpRequest.status === 200) {
-              document.getElementById('neuro-res').innerText = httpRequest.responseText
+              document.getElementById(`${path}-res`).innerText = httpRequest.responseText
           } else {
               alert('There was a problem with the request.')
           }
